@@ -1,9 +1,12 @@
 import React from 'react';
+import CocktailList from '../components/CocktailList';
+import SearchForm from '../components/SearchForm';
 
 export default function Home() {
   return (
     <main>
-      [Home page]
+      <SearchForm />
+      <CocktailList />
     </main>
   );
 };

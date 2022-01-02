@@ -15,7 +15,7 @@ Global Styles, Buttons
 /* 
 ====== 
 Navbar, About, Error
-(components styles)
+(components and pages styles)
 ======
 */
 @import './base/components';
@@ -53,4 +53,4 @@ Cocktail
 Loader
 ======
 */
-// @import './loader/new_loader';
+@import './base/loader';

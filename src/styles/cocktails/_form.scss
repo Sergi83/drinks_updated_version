@@ -1,0 +1,70 @@
+// variables and mixins
+@import '../variables';
+
+
+/* 
+====== 
+Form
+======
+*/
+.search {
+    margin-top: 1rem;
+    padding-bottom: 0;
+}
+
+.search-form {
+    width: $smallWidth;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+
+    border-radius: $mainBorderRadius;
+    background: $mainWhite;
+    text-transform: capitalize;
+    box-shadow: $lightShadow;
+}
+
+.form-control {
+    
+    label {
+        display: block;
+        margin-bottom: 1.25rem;
+        color: $primaryColor;
+        
+        // text parameters (+check if it's present)
+        @include font-size-weight-transform-spacing (0, bold, 0, 0.25rem);
+    }
+    
+    input {
+        font-size: 1.2rem;
+        background: $mainBackground;
+        width: 100%;
+        padding: 0.5rem;
+        
+        border: none;
+        border-color: transparent;
+        border-radius: $mainBorderRadius;
+    }
+}
+
+@include mediaQ-size (phone) {
+    // 
+    .form-control {
+        label {
+            // 
+            text-align: center;
+            letter-spacing: 0.15rem;
+        }
+    }
+}
+
+@include mediaQ-size (tablet-up) {
+
+    // 
+    .form-control {
+        label {
+            // 
+            text-align: center;
+        }
+    }
+}
