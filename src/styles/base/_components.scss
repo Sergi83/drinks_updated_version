@@ -1,0 +1,99 @@
+// variables and mixins
+@import '../variables';
+
+// components styles:
+// Navbar, About, Error
+
+
+/* 
+====== 
+Navbar
+======
+*/
+.navbar {
+    background: $mainWhite;
+    box-shadow: $lightShadow;
+    border-bottom: 2px solid $primaryColor;
+    height: 5rem;
+    
+    // display fl, align-items c
+    @include dflex-aic;
+}
+
+.nav-center {
+    width: $smallWidth;
+    max-width: $fullWidth;
+    margin: 0 auto;
+    justify-content: space-between;
+    
+    @include dflex-aic;
+}
+
+.nav-links {
+    @include dflex-aic;
+    
+    a {
+        display: inline-block;
+        margin-right: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        
+        transition: $mainTransition;
+
+        // text parameters
+        @include font-size-weight-transform-spacing (1.2rem, bold, capitalize, 2px);
+    
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+}
+
+.logo {
+    width: 4rem;
+}
+
+@include mediaQ-size (phone) {
+    // 
+    .nav-links a {
+        margin-right: 0.25rem;
+        padding: 0.15rem 0.20rem;
+        font-weight: normal;
+    }
+
+    .logo {
+        width: 3rem;
+    }
+}
+
+/* 
+====== 
+About
+======
+*/
+.about-section {
+    width: $smallWidth;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    
+    p {
+        line-height: 2rem;
+
+        // text parameters, also check if it's not present(0)
+        @include font-size-weight-transform-spacing (0,400,0,2px);
+    }
+}
+
+/* 
+====== 
+Error
+======
+*/
+.error-page {
+    display: flex;
+    justify-content: center;
+}
+
+.error-container {
+    text-align: center;
+    text-transform: capitalize;
+}

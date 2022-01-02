@@ -1,0 +1,56 @@
+// clear styles
+@import './base/reset';
+
+/* 
+====== 
+Variables,
+Global Styles, Buttons
+======
+*/
+@import './variables';
+
+@import './base/base';
+
+
+/* 
+====== 
+Navbar, About, Error
+(components and pages styles)
+======
+*/
+@import './base/components';
+
+
+
+/* 
+====== 
+Cocktails List,
+Cocktail 
+======
+*/
+@import './cocktails/cocktails_list';
+
+
+/* 
+====== 
+Form
+======
+*/
+@import './cocktails/form';
+
+
+/* 
+====== 
+Cocktail
+(the cocktail info)
+======
+*/
+@import './cocktails/single_cocktail';
+
+
+/* 
+====== 
+Loader
+======
+*/
+@import './base/loader';

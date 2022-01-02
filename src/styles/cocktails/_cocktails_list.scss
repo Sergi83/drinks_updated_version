@@ -1,0 +1,84 @@
+// variables and mixins
+@import '../variables';
+
+/*
+======
+Cocktails List
+======
+*/
+
+.section { padding: 5rem 0; }
+
+.section-title {
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+
+    text-align: center;
+
+    // text parameters(+ check if it's not absent(0))
+    @include font-size-weight-transform-spacing (2rem, 0, capitalize, $mainSpacing)
+}
+
+.cocktails-center {
+    margin: 0 auto;
+    width: $smallWidth;
+    max-width: $fullWidth;
+
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+@include mediaQ-size (phone) {
+    .section-title { font-size: 1.5rem; }
+}
+
+@include mediaQ-size (tablet-up) {
+    // create more columns on wider screen
+    .cocktails-center {
+        grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+    }
+}
+
+
+/*
+======
+Cocktail
+======
+*/
+
+.cocktail {
+    background: $mainWhite;
+    box-shadow: $lightShadow;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin-bottom: 2rem;
+
+    @include bdradius-transition ($mainBorderRadius, $mainTransition);
+
+    &:hover { box-shadow: $darkShadow; }
+
+    img {
+        height: 20rem;
+        object-fit: cover;
+
+        border-top-left-radius: $mainBorderRadius;
+        border-top-right-radius: $mainBorderRadius;
+    }
+}
+
+.cocktail-footer {
+    padding: 1.5rem;
+
+    h3,
+    h4,
+    p { margin-bottom: 0.3rem; }
+
+    h3 { font-size: 2rem; }
+
+    p {
+        color: $darkGrey;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,50 @@
+// variables and mixins
+@import '../variables';
+
+
+/* 
+====== 
+Cocktail
+(the cocktail info)
+======
+*/
+
+.cocktail-section { text-align: center; }
+
+.drink {
+    width: $smallWidth;
+    max-width: $fullWidth;
+    margin: 0 auto;
+    text-align: left;
+
+    img { border-radius: $mainBorderRadius; }
+
+    p {
+        line-height: 1.8;
+
+        // text parameters(+ check if it's not absent(0))
+        @include font-size-weight-transform-spacing (0, bold, capitalize, 0)
+    }
+
+    span { margin-right: 0.5rem; }
+}
+
+.drink-data {
+    padding: 0.25rem 0.5rem;
+    border-radius: $mainBorderRadius;
+    @include color-background ($primaryColor, $primaryLightColor);
+}
+
+.drink-info { padding-top: 2rem; }
+
+@include mediaQ-size (desktop-up) {
+    // 
+    .drink {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .drink-info { padding-top: 0; }
+}

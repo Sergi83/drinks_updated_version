@@ -1,0 +1,113 @@
+/* 
+====== 
+Variables 
+======
+*/
+
+// colors
+$primaryLightColor:#d4e6a5;
+$primaryColor: #476a2e;
+$primaryDarkColor: #c02c03;
+$mainWhite: #fff;
+$offWhite: #f7f7f7;
+$mainBackground: #c2bbc2;
+$mainOverlay: rgba(35, 10, 36, 0.4);
+$mainBlack: #222;
+$mainGrey: #ececec;
+$darkGrey: #afafaf;
+$mainRed: #bd0303;
+
+// shadows
+$lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+$darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+
+// shimmer
+$shimmer: rgba(255, 255, 255, 0.3);
+
+// transition
+$mainTransition: all 0.3s linear;
+
+// spacing, border
+$mainSpacing: 0.3rem;
+$mainBorderRadius: 0.25rem;
+
+// width
+$smallWidth: 85vw;
+$maxWidth: 40rem;
+$fullWidth: 1170px;
+
+
+/* 
+====== 
+Mixins 
+======
+*/
+
+// text color, background
+@mixin color-background ($color, $bg) {
+    color: $color;
+    background: $bg;
+}
+
+// border-radius, +transition
+@mixin bdradius-transition ($bdrad, $tran) {
+    border-radius: $bdrad;
+    transition: $tran;
+    -webkit-border-radius: $bdrad;
+    -moz-border-radius: $bdrad;
+    -ms-border-radius: $bdrad;
+    -o-border-radius: $bdrad;
+    -webkit-transition: $tran;
+    -moz-transition: $tran;
+    -ms-transition: $tran;
+    -o-transition: $tran;
+}
+
+// df+aic
+@mixin dflex-aic {
+    display: flex;
+    align-items: center;
+}
+
+
+// text parameters(+ check if it's not absent(0))
+@mixin font-size-weight-transform-spacing ($fz, $fw, $tt, $ls) {
+    @if $fz !=0 { font-size: $fz; }
+    @if $fw !=0 { font-weight: $fw; }
+    @if $tt !=0 { text-transform: $tt; }
+    @if $ls !=0 { letter-spacing: $ls; }
+}
+
+//* loader
+
+// parameters for loading elements (title, text, image, etc)
+@mixin skeleton-bgc-h-w-mxy ($h, $w, $mx, $my) {
+    background-color: $mainGrey;
+    height: $h;
+    width: $w;
+    margin: $my $mx;
+}
+
+// loader @keyframe
+@mixin keyframe-transform-translate ($x) {
+    transform: translateX($x);
+    -webkit-transform: translateX($x);
+    -moz-transform: translateX($x);
+    -ms-transform: translateX($x);
+    -o-transform: translateX($x);
+}
+
+
+// * media queries (conditions)
+// queue of media queries: should be the same order as in the mixin
+@mixin mediaQ-size ($size) {
+    @if $size == phone {
+        @media (max-width: 500px) { @content; }
+    }
+    @else if $size == tablet-up {
+        @media (min-width: 501px) { @content; }
+    }
+    @else if $size == desktop-up {
+        @media (min-width: 800px) { @content; }
+    }
+}

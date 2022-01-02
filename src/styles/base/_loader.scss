@@ -1,0 +1,102 @@
+// 
+@import '../variables';
+
+/* 
+====== 
+New styles
+======
+*/
+.loading-list {
+
+    .title {
+        // background-color(default), height, width, margin (y-axis, x-axis)
+        @include skeleton-bgc-h-w-mxy (2rem, 35%, 0, 1rem);
+    }
+
+    .text1 {
+        @include skeleton-bgc-h-w-mxy (1.35rem, 51%, 0, 0.75rem);
+    }
+
+    .text2 {
+        @include skeleton-bgc-h-w-mxy (1.1rem, 40%, 0, 0.1rem);
+    }
+
+    .image {
+        border-radius: $mainBorderRadius;
+        @include skeleton-bgc-h-w-mxy (20rem, 95%, auto, 0.5rem);
+    }
+}
+
+.loading-article {
+
+    .drink-info {
+        align-self: start;
+    }
+
+    .thumbnail {
+        border-radius: $mainBorderRadius;
+        @include skeleton-bgc-h-w-mxy (3rem, 15%, auto, 1rem);
+    }
+
+    .title {
+        // background-color(default), height, width, margin (y-axis, x-axis)
+        @include skeleton-bgc-h-w-mxy (2.5rem, 30%, auto, 2.5rem);
+    }
+
+    .text1 {
+        @include skeleton-bgc-h-w-mxy (1.25rem, 65%, 0, 1rem);
+    }
+
+    .text2 {
+        @include skeleton-bgc-h-w-mxy (1.25rem, 80%, 0, 1rem);
+    }
+
+    .image {
+        border-radius: $mainBorderRadius;
+        @include skeleton-bgc-h-w-mxy (40vh, 100%, auto, auto);
+    }
+}
+
+
+
+//* Animation styles
+
+// parent element for .animation-wrapper
+.loader {
+    position: relative;
+    overflow: hidden;
+}
+
+// parent must be relative position & overflow hidden
+.animation-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: loading 0.75s infinite;
+    -webkit-animation: loading 0.75s infinite;
+}
+
+.animation-wave {
+    width: 50%;
+    height: 100%;
+    background: $shimmer;
+    transform: skewX(-20deg);
+    box-shadow: 0 0 30px 30px $shimmer;
+}
+
+@keyframes loading {
+    0% {
+        @include keyframe-transform-translate (-150%);
+    }
+
+    50% {
+        @include keyframe-transform-translate (-60%);
+    }
+
+    100% {
+        @include keyframe-transform-translate (150%);
+
+    }
+}
