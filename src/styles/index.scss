@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// clear styles
+@import './base/reset';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* 
+====== 
+Variables,
+Global Styles, Buttons
+======
+*/
+@import './variables';
+
+@import './base/base';
+
+
+/* 
+====== 
+Navbar, About, Error
+(components styles)
+======
+*/
+@import './base/components';
+
+
+
+/* 
+====== 
+Cocktails List,
+Cocktail 
+======
+*/
+@import './cocktails/cocktails_list';
+
+
+/* 
+====== 
+Form
+======
+*/
+@import './cocktails/form';
+
+
+/* 
+====== 
+Cocktail
+(the cocktail info)
+======
+*/
+@import './cocktails/single_cocktail';
+
+
+/* 
+====== 
+Loader
+======
+*/
+// @import './loader/new_loader';
