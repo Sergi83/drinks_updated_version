@@ -1,6 +1,7 @@
 import React from 'react';
-
+// npm package for loading images
 import ProgressiveImage from "react-progressive-graceful-image";
+
 
 const ShowSingleCocktail = ({props}) => {
 

@@ -7,6 +7,7 @@ import LoadingItem from '../components/Loading/LoadingItem';
 import ShowSingleCocktail from '../components/ShowSingleCocktail';
 
 export default function SingleCocktail() {
+  // useParams -> for multiple routes (cocktail/:id), moving to the id of route
   const { id } = useParams();
   const [loading, setLoading] = React.useState(false);
   const [cocktail, setCocktail] = React.useState(null);
@@ -17,6 +18,7 @@ export default function SingleCocktail() {
     async function getCocktail() {
 
       try {
+        // get the cocktail by its id
         const response = await fetch(
           `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
         );
@@ -65,6 +67,8 @@ export default function SingleCocktail() {
       };
       setLoading(false);
     };
+
+    // run function -> get data from api
     getCocktail();
   }, [id]);
 

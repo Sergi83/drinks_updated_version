@@ -15,8 +15,8 @@ import SingleCocktail from "./pages/SingleCocktail";
 import Navbar from "./components/Navbar";
 
 
-
 function App() {
+  // create router: Navbar always showing, Routes working as Switch (important order in which Route elements are following)
   return (
     <BrowserRouter>
       <Navbar />
